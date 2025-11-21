@@ -9,9 +9,8 @@ public class Monopatin {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	@ManyToOne
-	@JoinColumn(name = "parada_id")
-	private Parada parada;
+	@Column(name="parada")
+	private Long paradaId;
 	@Column (name="activo")
 	private boolean activo;
 	@Column (name="kilometros")
@@ -27,9 +26,9 @@ public class Monopatin {
 	public Monopatin() {
 	}
 
-	public Monopatin(Parada parada, boolean activo, double kilometros, boolean mant, double longitud,double latitud) {
+	public Monopatin(Long paradaId, boolean activo, double kilometros, boolean mant, double longitud,double latitud) {
 		super();
-		this.parada = parada;
+		this.paradaId = paradaId;
 		this.activo = activo;
 		this.kilometros = kilometros;
 		this.mantenimiento = mant;
@@ -41,12 +40,12 @@ public class Monopatin {
 		return id;
 	}
 
-	public Parada getParada() {
-		return parada;
+	public Long getParadaID() {
+		return paradaId;
 	}
 
-	public void setParada(Parada parada) {
-		this.parada = parada;
+	public void setParadaID(Long paradaId) {
+		this.paradaId = paradaId;
 	}
 
 	public boolean isActivo() {

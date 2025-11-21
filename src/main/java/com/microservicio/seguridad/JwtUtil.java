@@ -12,6 +12,8 @@ import io.jsonwebtoken.security.Keys;
 
 @Component
 public class JwtUtil {
+	
+	/*Acá vamos a validar el token*/
 	private final String SECRET = "cambiar_Por_MatiyJuan";
 
     public String extractUsername(String token) {

@@ -17,7 +17,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class JwtTokenFilter extends OncePerRequestFilter {
-
+/*Lo que hacemos acá es que agarramos interceptamos las request
+ *  y validamos y seteamos al user logueado*/
 	@Autowired
     private JwtUtil jwtUtil;
 

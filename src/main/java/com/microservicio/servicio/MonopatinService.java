@@ -217,12 +217,12 @@ public class MonopatinService {
         dto.setKilometros(monopatin.getKilometros());
         dto.setMantenimiento(monopatin.isMantenimiento());
 
-        if (monopatin.getParada() != null) {
-            dto.setParadaId(monopatin.getParada().getId());
+        if (monopatin.getParadaID() != null) {
+            dto.setParadaId(monopatin.getParadaID());
         }
 
         return dto;
 	}
-    
+
     
 }

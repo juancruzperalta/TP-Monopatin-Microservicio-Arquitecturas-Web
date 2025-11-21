@@ -167,4 +167,5 @@ public class MonopatinController {
     public Map<String, Long> reportedisponibles() {
         return service.countEstado();
     }
+    
 }
