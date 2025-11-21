@@ -2,8 +2,7 @@
 
 
 
-## En este microservicio lo que hicimos fue realizar el de monopatin, usamos un repositorio, un controller,
-un servicio , también implementamos el uso de un controller y de JWT. 
+En este microservicio lo que hicimos fue realizar el de monopatin, usamos un repositorio, un controller,un servicio , también implementamos el uso de un controller y de JWT. 
 - En el **controller** hicimos todos los endpoints y utilizamos el service para ejecutar la lógica de negocio.
 - En el **service** nos comunicamos con el repositorio. En el service vamos a hacer la lógica de negocio. 
 - En el **repositorio** usamos el base de JPA (CRUD) -save() - findById() - findAll() - delete()
