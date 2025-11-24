@@ -49,7 +49,8 @@ public class MonopatinService {
     public MonopatinDTO update(Long id, MonopatinDTO dto) {
     	 Monopatin existing = repository.findById(id)
     			 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "No existe el monopatin"));
-    	
+    	 
+    	 	existing.setParadaID(dto.getParadaId());
     	    existing.setActivo(dto.isActivo());
     	    existing.setKilometros(dto.getKilometros());
     	    existing.setMantenimiento(dto.isMantenimiento());
