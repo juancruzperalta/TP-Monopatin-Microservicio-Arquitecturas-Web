@@ -7,6 +7,7 @@ En este microservicio lo que hicimos fue realizar el de monopatin, usamos un rep
 - En el **service** nos comunicamos con el repositorio. En el service vamos a hacer la lógica de negocio. 
 - En el **repositorio** usamos el base de JPA (CRUD) -save() - findById() - findAll() - delete()
 
+- **Este microservicio corre en el puerto 8081**
 
 ## ENDPOINTS : Microservicio de Monopatin
 
