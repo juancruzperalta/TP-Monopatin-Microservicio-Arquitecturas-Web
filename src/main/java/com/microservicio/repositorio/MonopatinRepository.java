@@ -9,4 +9,5 @@ import com.microservicio.modelo.Monopatin;
 
 
 public interface MonopatinRepository extends JpaRepository<Monopatin, Long> {
+	List<Monopatin> findByParadaId(Long paradaId);
 }

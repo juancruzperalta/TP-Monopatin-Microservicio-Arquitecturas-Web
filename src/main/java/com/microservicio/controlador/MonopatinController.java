@@ -48,7 +48,7 @@ public class MonopatinController {
     @PreAuthorize("hasAnyAuthority('ROLE_USER', 'ROLE_ADMIN', 'ROLE_EMPLOYEE')")
     public MonopatinDTO getById(
     		@Parameter(description = "ID del monopatin a buscar") 
-    		@PathVariable Long id) {
+    		@PathVariable("id") Long id) {
         return service.findById(id);
     }
 
@@ -65,7 +65,7 @@ public class MonopatinController {
     @PreAuthorize("hasAnyAuthority('ROLE_ADMIN')")
     public MonopatinDTO update(
     		@Parameter(description = "ID del monopatin a actualizar") 
-    		@PathVariable Long id, @RequestBody MonopatinDTO m) {
+    		@PathVariable("id") Long id, @RequestBody MonopatinDTO m) {
         return service.update(id, m);
     }
 
@@ -74,7 +74,7 @@ public class MonopatinController {
     @PreAuthorize("hasAnyAuthority('ROLE_ADMIN')")
     public ResponseEntity<Void> delete(
     		@Parameter(description = "ID del monopatin a eliminar") 
-    		@PathVariable Long id) {
+    		@PathVariable("id") Long id) {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }
@@ -84,7 +84,7 @@ public class MonopatinController {
     @PreAuthorize("hasAnyAuthority('ROLE_EMPLOYEE')")
     public Monopatin comenzar(
     		@Parameter(description = "ID del monopatin en mantenimiento") 
-    		@PathVariable Long id) {
+    		@PathVariable("id") Long id) {
         return service.comenzarMantenimiento(id);
     }
 
@@ -93,7 +93,7 @@ public class MonopatinController {
     @PreAuthorize("hasAnyAuthority('ROLE_EMPLOYEE')")
     public Monopatin terminar(
     		@Parameter(description = "ID del monopatin en mantenimiento") 
-    		@PathVariable Long id) {
+    		@PathVariable("id") Long id) {
         return service.terminarMantenimiento(id);
     }
     
@@ -102,7 +102,7 @@ public class MonopatinController {
     @PreAuthorize("hasAnyAuthority('ROLE_ADMIN')")
     public Monopatin desplazarMonopatin(
     		@Parameter(description = "ID del monopatin") 
-    		@PathVariable Long id, @RequestBody Map<String, Object> fields) {
+    		@PathVariable("id") Long id, @RequestBody Map<String, Object> fields) {
         return service.cambiarUbicacion(id, fields);
     }
     
@@ -111,7 +111,7 @@ public class MonopatinController {
     @PreAuthorize("hasAnyAuthority('ROLE_USER')")
     public Monopatin pausa(
     		@Parameter(description = "ID del monopatin a pausar") 
-    		@PathVariable Long id) {
+    		@PathVariable("id") Long id) {
         return service.pausarMonopatin(id);
     }
     
@@ -120,7 +120,7 @@ public class MonopatinController {
     @PreAuthorize("hasAnyAuthority('ROLE_ADMIN', 'ROLE_EMPLOYEE')")
     public Monopatin sumarkm(
     		@Parameter(description = "ID del monopatin") 
-    		@PathVariable Long id, 
+    		@PathVariable("id") Long id, 
     		@Parameter(description = "kilometros a sumar (double)") 
     		@RequestParam double km) {
         return service.sumarkm(id,km);
@@ -131,7 +131,7 @@ public class MonopatinController {
     @PreAuthorize("hasAnyAuthority('ROLE_USER')")
     public Monopatin reanudar(
     		@Parameter(description = "ID del monopatin a reanudar") 
-    		@PathVariable Long id) {
+    		@PathVariable("id") Long id) {
         return service.reanudarMonopatin(id);
     }
     
@@ -166,6 +166,13 @@ public class MonopatinController {
     @PreAuthorize("hasAnyAuthority('ROLE_ADMIN')")
     public Map<String, Long> reportedisponibles() {
         return service.countEstado();
+    }
+    
+    @Operation(summary="Obtiene todos los monopatines de una parada")
+    @GetMapping(params = "paradaId")
+    @PreAuthorize("hasAnyAuthority('ROLE_ADMIN')")
+    public List<MonopatinDTO> getByParada(@Parameter(description = "id de la parada")@RequestParam Long paradaId) {
+        return service.findByParadaId(paradaId);
     }
     
 }

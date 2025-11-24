@@ -199,6 +199,7 @@ public class MonopatinService {
 
 	private Monopatin DTOaEntidad(MonopatinDTO dto) {
 	    Monopatin monopatin = new Monopatin();
+	    monopatin.setParadaID(dto.getParadaId());
 	    monopatin.setLatitud(dto.getLatitud());
 	    monopatin.setLongitud(dto.getLongitud());
 	    monopatin.setActivo(dto.isActivo());
@@ -222,6 +223,16 @@ public class MonopatinService {
         }
 
         return dto;
+	}
+
+	public List<MonopatinDTO> findByParadaId(Long paradaId) {
+	    List<Monopatin> lista = repository.findByParadaId(paradaId);
+
+	    List<MonopatinDTO> dtos = new ArrayList<>();
+	    for (Monopatin m : lista) {
+	        dtos.add(EntidadaDTO(m));
+	    }
+	    return dtos;
 	}
 
     
