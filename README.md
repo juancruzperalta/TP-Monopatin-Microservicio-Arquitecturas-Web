@@ -11,8 +11,6 @@ En este microservicio lo que hicimos fue realizar el de monopatin, usamos un rep
 
 ## DIAGRAMAS: 
 ![WhatsApp Image 2025-11-26 at 11 26 20](https://github.com/user-attachments/assets/37621d42-3b06-4f12-8134-8ab5eb150b7f)
-![WhatsApp Image 2025-11-26 at 11 14 15](https://github.com/user-attachments/assets/bae5c7c9-70bf-4db1-af6e-063b0e5b0dd0)
-![WhatsApp Image 2025-11-26 at 11 14 01](https://github.com/user-attachments/assets/934526c1-4926-445d-8898-183caf91be8b)
 
 ## ENDPOINTS : Microservicio de Monopatin
 
