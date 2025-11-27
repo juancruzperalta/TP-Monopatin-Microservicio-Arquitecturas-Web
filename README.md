@@ -13,6 +13,7 @@ En este microservicio lo que hicimos fue realizar el de monopatin, usamos un rep
 ![WhatsApp Image 2025-11-26 at 11 26 20](https://github.com/user-attachments/assets/37621d42-3b06-4f12-8134-8ab5eb150b7f)
 
 ## ENDPOINTS : Microservicio de Monopatin
+http://localhost:8081/swagger-ui/index.html#/
 
 ##### GET `("/monopatines")`
 - Obtiene todos los monopatines  
