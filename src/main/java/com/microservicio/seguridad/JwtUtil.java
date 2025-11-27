@@ -13,7 +13,7 @@ import io.jsonwebtoken.io.Decoders;
 public class JwtUtil {
 	
 	/*Acá vamos a validar el token*/
-	private final String SECRET = "c2VjcmV0X21hdGl5anVhbl9zdXBlcl9rZXlfMjU2X2JpdHM=";
+	private final String SECRET = "eGtmMWtKQXl5UCFjUjEwR0pQKk1qcU5FUVZxWWd4Qk0=";
 
     public String extractUsername(String token) {
         return extractClaims(token).getSubject();
